@@ -26,7 +26,8 @@ load_dotenv()
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash",  # Use "gemini-1.5-pro" if supported in your environment
-    temperature=0
+    temperature=0,
+    GOOGLE_API_KEY="your_api_key"
 )
 
 st.title("News Research Tool 📰🔍")
@@ -83,6 +84,7 @@ if query:
             sources_list = sources.split("\n") #split the sources by new link
             for source in sources_list:
                 st.write(source)
+
 
 
 
